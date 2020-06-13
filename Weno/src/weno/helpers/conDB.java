@@ -10,17 +10,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class conDB extends Thread{
+public class conDB {
 	
 	public String user = "postgres";
-	public String pass = "princho4";
+	public String pass = "princho";
 	public String url= "jdbc:postgresql://localhost:5432/WENO";
-	PreparedStatement pt;
-	ResultSet rc;
-	Connection conex;
+	PreparedStatement pt = null;
+	ResultSet rc = null;
+	Connection conex =null;
+	boolean error;
 	
 	public Connection DBConnection() {
-		boolean error;
 		
 		try {
 			Class.forName("org.postgresql.Driver");

@@ -3,10 +3,10 @@ package weno.controllers;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
+//encriptacion de contrasena momentanea presenta errores 
 public class codigo {
 	
-	private String sip;
+	private static String sip;
 	
 	public codigo(String pass) throws NoSuchAlgorithmException {	
 		MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -14,7 +14,7 @@ public class codigo {
 		setTEST(bytesToHex(encodedhash));
 	}
 	
-	public String getTEST() {
+	public static String getTEST() {
 		return sip;
 	}
 
